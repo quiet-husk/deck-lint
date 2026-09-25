@@ -1,0 +1,11 @@
+[package]
+name = "decklint"
+version = "0.1.0"
+edition = "2021"
+authors = ["quiet-husk"]
+license = "MIT"
+description = "A linter for spaced repetition deck files"
+
+[[bin]]
+name = "decklint"
+path = "src/main.rs"
