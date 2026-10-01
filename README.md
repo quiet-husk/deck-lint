@@ -43,8 +43,12 @@ deck.txt:3: error: duplicate card id 'card-1042' (first seen on line 2)
 ## Usage
 
 ```
-decklint path/to/deck.txt
+decklint [--json] path/to/deck.txt
 ```
+
+With `--json` the findings are printed as an array of objects with `file`,
+`line`, `severity` and `message` keys (`[]` when the file is clean), instead
+of the one-line-per-finding text form.
 
 Exit code is nonzero if any finding is an error, so it can be dropped into a
 pre-commit hook or CI step for a deck export pipeline.
@@ -70,5 +74,5 @@ rule directly against constructed values, without touching the filesystem.
 
 ## Status
 
-Early skeleton. No CLI flags yet (severity filtering, JSON output), and the
-rule set above is intentionally small.
+Early skeleton. The only flag so far is `--json` (no severity filtering yet),
+and the rule set above is intentionally small.
